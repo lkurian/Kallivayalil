@@ -1,0 +1,206 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="External.master.cs" Inherits="External" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>:: Kallivayalil Family :: - Bringing Our Family Together.</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            height: 21px;
+        }
+        .style2
+        {
+            width: 100%;
+            height: 16px;
+        }
+        .style3
+        {
+            height: 16px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="margin-left: 30px;">
+        <table width="95%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td class="style3">
+                    <img src="images/outerborder_topleft.jpg" width="22" height="23" />
+                </td>
+                <td background="images/outerborder_toprepeater.gif" style="background-repeat: repeat-x;
+                    " class="style2">
+                </td>
+                <td class="style3">
+                    <img src="images/outerborder_topright.jpg" width="24" height="23" />
+                </td>
+            </tr>
+            <tr>
+                <td background="images/outerborder_leftrepeater.gif" style="background-repeat: repeat-y;">
+                </td>
+                <td class="contents" valign="top">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
+                        <tr>
+                            <td height="70px" align="left" valign="middle">
+                                <a href="Default.aspx">
+                                    <img height="68" src="images/Header_logo.gif" width="296" style="border: none;" /></a>
+                            </td>
+                            <td width="100px">
+                            </td>
+                            <td valign="middle">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                    <tr>
+                                        <td colspan="2">
+                                            <asp:Login ID="Login1" runat="server" BorderColor="#3333FF" OnAuthenticate="Login1_Authenticate">
+                                                <LayoutTemplate>
+                                                    <table border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td style="padding-right: 5px;">
+                                                                <table border="0" cellpadding="0" style="z-index: 1;" frame="void">
+                                                                    <tr>
+                                                                        <td align="right">
+                                                                            <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">User Name</asp:Label>
+                                                                        </td>
+                                                                        <td class="style1">
+                                                                            <asp:TextBox ID="UserName" runat="server" CssClass="FormTextSmall"></asp:TextBox>
+                                                                            <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName"
+                                                                                ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="right">
+                                                                            <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password</asp:Label>
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="FormTextSmall"></asp:TextBox>
+                                                                            <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
+                                                                                ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
+                                                                            <asp:ImageButton ID="LoginButton" runat="server" CommandName="Login" ImageAlign="Top"
+                                                                                ImageUrl="~/images/SignIn.gif" Style="margin-left: 0px;" ValidationGroup="Login1"
+                                                                                OnClick="LoginButton_Click" />
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="center" colspan="2" style="color: red">
+                                                                            <asp:HyperLink ID="Signup0" runat="server" NavigateUrl="~/ForgotPassword.aspx" Text="Forgot Password ?"
+                                                                                ToolTip="Request to retrieve password" /><br />
+                                                                            <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            <td style="border-left: solid 1px #999999; padding-left: 5px;" width="150px">
+                                                                Family Member but NOT Registered Yet?<br />
+                                                                <asp:HyperLink ID="Signup" Text="Register Online" runat="server" ToolTip="Sign Up as a new user"
+                                                                    NavigateUrl="~/Register.aspx" />
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </LayoutTemplate>
+                                            </asp:Login>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" height="2px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" 
+                                    style="height: 527px">
+                                    <tr>
+                                        <td style="background: url(images/menu_bg.gif) no-repeat;" height="246px" width="226px"
+                                            valign="top">
+                                            <table width="225px" cellpadding="15" cellspacing="0" border="0" align="right">
+                                                <tr>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr align="left" class="menu">
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr align="left" class="menu">
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr align="left" class="menu">
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr align="left" class="menu">
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td valign="top">
+                                        <!-- AddThis Button BEGIN -->
+                                        <div class="addthis_toolbox addthis_default_style">
+                                        <a href="http://www.addthis.com/bookmark.php?v=250&amp;pub=xa-4b194e7944bbfcc1" class="addthis_button_compact">Share</a>
+                                        <span class="addthis_separator">|</span>
+                                        <a class="addthis_button_print"></a>
+                                        <a class="addthis_button_email"></a>
+                                        <a class="addthis_button_favorites"></a>                                       
+                                         <a class="addthis_button_facebook"></a>
+                                        </div>
+                                        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pub=xa-4b194e7944bbfcc1"></script>
+                                        <!-- AddThis Button END -->
+                                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                            </asp:ContentPlaceHolder>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" valign="bottom" align="center" class="downlink">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                    <tr>
+                                        <td width="50%" colspan="3">
+                                            <a href="History.aspx">History</a> | <a href="Committee.aspx">Comittee Members</a> |<a href="ContactUs.aspx">Contact
+                                                Us</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="50%" align="center" colspan="3">
+                                            © Copyright 2008&nbsp;<img src="images/icon_k.gif" width="21" height="23" style="vertical-align: middle;" />&nbsp;Kallivayalil
+                                            Family. All rights reserved
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td background="images/outerborder_rightrepeater.gif" style="background-repeat: repeat-y;">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="images/outerborder_bottomleft.jpg" width="22" height="22" />
+                </td>
+                <td background="images/outerborder_bottomrepeater.gif" style="background-repeat: repeat-x;
+                    width: 100%;" height="22px">
+                </td>
+                <td>
+                    <img src="images/outerborder_bottomright.jpg" width="24" height="22" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Dummy.master.cs" Inherits="Dummy" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>:: Kallivayalil Family :: - Bringing our family together.</title>
+<link rel="stylesheet" href="css/style.css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="margin-left:10px;">
+    <table width="95%" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td><img src="images/outerborder_topleft.jpg" width="22" height="23" /></td>
+		<td background="images/outerborder_toprepeater.gif" style="background-repeat:repeat-x; width:100%;" height="23px"></td>
+		<td><img src="images/outerborder_topright.jpg" width="24" height="23" /></td>
+	</tr>
+	<tr>
+		<td background="images/outerborder_leftrepeater.gif" style="background-repeat:repeat-y;"></td>
+		<td class="contents" valign="top">
+			<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
+				<tr>
+					<td height="70px" align="left" valign="bottom"><img src="images/Header_logo.gif" width="296" height="68" /></td>
+					<td width="500px"></td>
+					<td width="161px" valign="middle">
+						<table width="100%" cellpadding="0" cellspacing="0" border="0">
+							<tr>
+								<td colspan="3" height="20px"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" height="25px"></td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<table width="100%" cellpadding="0" cellspacing="0" border="0">
+							<tr>
+								<td style="background:url(images/menu_bg.gif) no-repeat;" height="246px" width="226px" valign="top">
+									<table width="95%" cellpadding="15" cellspacing="0" border="0" align="right">
+										
+									</table>
+								</td>
+								<td valign="top">
+								<asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+                                    </asp:ContentPlaceHolder>									
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" valign="top">
+						&nbsp;</td>
+				</tr>
+				
+			</table>
+		</td>
+		<td background="images/outerborder_rightrepeater.gif" style="background-repeat:repeat-y; "></td>
+	</tr>
+	<tr>
+		<td><img src="images/outerborder_bottomleft.jpg" width="22" height="22" /></td>
+		<td background="images/outerborder_bottomrepeater.gif" style="background-repeat:repeat-x; width:100%;" height="22px"></td>
+		<td><img src="images/outerborder_bottomright.jpg" width="24" height="22" /></td>
+	</tr>
+</table>
+        
+    </div>
+    </form>
+</body>
+</html>

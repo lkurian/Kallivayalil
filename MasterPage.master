@@ -1,0 +1,210 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script type="text/javascript">
+        function getPrint(print_area, title) {
+            //Creating new page
+            var pp = window.open();
+            //Adding HTML opening tag with <HEAD> … </HEAD> portion 
+            pp.document.writeln('<HTML><HEAD><title>'+title+'</title><LINK href=Styles.css  type="text/css" rel="stylesheet">')
+            pp.document.writeln('<LINK href=PrintStyle.css  type="text/css" rel="stylesheet" media="print"><base target="_self"></HEAD>')
+            //Adding Body Tag
+            pp.document.writeln('<body MS_POSITIONING="GridLayout" bottomMargin="0" leftMargin="0" topMargin="0" rightMargin="0">');
+            //Adding form Tag
+            pp.document.writeln('<form  method="post">');
+            //Creating two buttons Print and Close within a table
+            pp.document.writeln('<TABLE width=50%><TR><TD></TD></TR><TR><TD align=right><INPUT ID="PRINT" type="button" value="Print" onclick="javascript:location.reload(true);window.print();"><INPUT ID="CLOSE" type="button" value="Close" onclick="window.close();"></TD></TR><TR><TD></TD></TR></TABLE>');
+            //Writing print area of the calling page
+            pp.document.writeln(document.getElementById(print_area).innerHTML);           
+            //Ending Tag of </form>, </body> and </HTML>
+            pp.document.writeln('</form></body></HTML>');
+
+        }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>:: Kallivayalil Family :: - Bringing Our Family Together.</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            height: 527px;
+        }
+        .style2
+        {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 7.5pt;
+            color: #0b0b0b;
+            height: 50px;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="margin-left: 30px;">
+        <table width="95%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td>
+                    <img src="images/outerborder_topleft.jpg" width="22" height="23" />
+                </td>
+                <td background="images/outerborder_toprepeater.gif" style="background-repeat: repeat-x;
+                    width: 100%;" height="23px">
+                </td>
+                <td>
+                    <img src="images/outerborder_topright.jpg" width="24" height="23" />
+                </td>
+            </tr>
+            <tr>
+                <td background="images/outerborder_leftrepeater.gif" style="background-repeat: repeat-y;"
+                    class="style1">
+                </td>
+                <td class="style2" valign="top">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center" style="width: 99%">
+                        <tr>
+                            <td height="70px" style="width: 20%;" align="left" valign="middle">
+                                <a href="Default.aspx">
+                                    <img src="images/Header_logo.gif" width="296" height="68" style="border: none;" /></a>
+                            </td>
+                            <td valign="middle" align="right" style="width: 80%;">
+                                <%=UserName %><br />
+                                <asp:LinkButton runat="server" CausesValidation="false" ID="LinkButtonRegUser" Text="Register Users"
+                                    OnClick="LinkButtonRegUser_Click" Visible="false"></asp:LinkButton>&nbsp;|
+                                <asp:LinkButton runat="server" CausesValidation="false" ID="lnkProfile" Text="My Profile"
+                                    OnClick="lnkProfile_Click"></asp:LinkButton>&nbsp;|<asp:LinkButton OnClick="lnkLogout_LoggingOut"
+                                        Text="Logout" runat="server" ID="lnkLogout"></asp:LinkButton>
+                                        
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" height="2px">
+                            
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="height: 518px">
+                                    <tr>
+                                        <td style="background: url(images/menu_bg.gif) no-repeat;" height="246px" width="226px"
+                                            valign="top">
+                                            <table cellpadding="12" cellspacing="0" border="0" align="right" style="height: 476px;
+                                                width: 225px">
+                                                <tr style="height: 15px;">
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr align="left" class="menu">
+                                                    <td>
+                                                        <a href="Default.aspx">
+                                                            <img src="images/menu_home.png" style="border: none;" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr align="left" class="menu">
+                                                    <td>
+                                                        <a href="History.aspx">
+                                                            <img src="images/menu_history1.png" style="border: none;" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                    <a href="FamilyTree.aspx">
+                                                        <img src="images/menu_tree.png" style="border: none;" /> </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a href="Search.aspx">
+                                                            <img src="images/menu_search.png" style="border: none;" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a href="Photogallery.aspx">
+                                                            <img src="images/menu_photo1.png" style="border: none;" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr align="left" class="menu">
+                                                    <td>
+                                                        <a href="Committee.aspx">
+                                                            <img src="images/menu_committee1.png" style="border: none;" /></a>
+                                                    </td>
+                                                </tr>
+                                                 <tr align="left" class="menu">
+                                                    <td>
+                                                        <a href="ViewEvents.aspx">
+                                                            <img src="images/menu_events.png" style="border: none;" /></a>
+                                                    </td>
+                                                </tr>  
+                                                <tr align="left" class="menu">
+                                                    <td>
+                                                        <a href="ContactUs.aspx">
+                                                            <img src="images/menu_contact1.png" style="border: none;" /></a>
+                                                    </td>
+                                                </tr>                                                
+                                            </table>
+                                        </td>
+                                        <td valign="top">
+                                        <!-- AddThis Button BEGIN -->
+                                        <div class="addthis_toolbox addthis_default_style">
+                                        <a href="http://www.addthis.com/bookmark.php?v=250&amp;pub=xa-4b194e7944bbfcc1" class="addthis_button_compact">Share</a>
+                                        <span class="addthis_separator">|</span>
+                                         <a class="addthis_button_print"></a>
+                                        <a class="addthis_button_email"></a>
+                                        <a class="addthis_button_favorites"></a>                                       
+                                         <a class="addthis_button_facebook"></a>
+                                        </div>
+                                        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pub=xa-4b194e7944bbfcc1"></script>
+                                        <!-- AddThis Button END -->
+                                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                            </asp:ContentPlaceHolder>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" valign="bottom" align="center" class="downlink">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                    <tr>
+                                        <td width="50%" colspan="3">
+                                            <a href="History.aspx">History</a> | <a href="Committee.aspx">Comittee Members</a>
+                                            | <a href="#">Family Tree</a> | <a href="#">Photo Gallery</a> | <a href="Search.aspx">
+                                                People Search</a> | <a href="ContactUs.aspx">Contact Us</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="50%" align="center" colspan="3">
+                                            © Copyright 2008&nbsp;<img src="images/icon_k.gif" width="21" height="23" style="vertical-align: middle;" />&nbsp;Kallivayalil
+                                            Family. All rights reserved
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td background="images/outerborder_rightrepeater.gif" style="background-repeat: repeat-y;"
+                    class="style1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="images/outerborder_bottomleft.jpg" width="22" height="22" />
+                </td>
+                <td background="images/outerborder_bottomrepeater.gif" style="background-repeat: repeat-x;
+                    width: 100%;" height="22px">
+                </td>
+                <td>
+                    <img src="images/outerborder_bottomright.jpg" width="24" height="22" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
